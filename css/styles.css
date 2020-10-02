@@ -83,32 +83,32 @@ img {
 /* СПИСОК СОЦИАЛЬНЫХ ССЫЛОК */
 .social-list-link {
   display: flex;
-  /* margin-top: 16px; */
   justify-content: center;
 }
 .social-item:not(:last-child) {
   margin-right: 10px;
 }
 .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
   border-radius: 50%;
   background-repeat: no-repeat;
   background-position: center;
 }
-.social-item:nth-child(1) .social-link {
-  background-image: url("../images/svg/social-links/instagram.svg");
+.social-link:hover {
+  background-color: var(--accent-color);
 }
-.social-item:nth-child(2) .social-link {
-  background-image: url("../images/svg/social-links/twitter.svg");
+.social-svg {
+  width: 20px;
+  height: 20px;
+  fill: #afb1b8;
 }
-.social-item:nth-child(3) .social-link {
-  background-image: url("../images/svg/social-links/facebook.svg");
+.social-link:hover .social-svg {
+  fill: var(--hero-title-color);
 }
-.social-item:nth-child(4) .social-link {
-  background-image: url("../images/svg/social-links/linkedin.svg");
-}
-
 /* ======= END COMMON ======= */
 
 /* ======= LOGO ======= */
@@ -186,25 +186,24 @@ img {
 .active-page {
   color: var(--accent-color);
 }
-.mailto::before {
-  content: "";
-  display: inline-block;
+
+.envelope {
   width: 16px;
   height: 12px;
   margin-right: 10px;
-  background-image: url("../images/svg/svg-for-header/envelope.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  color: var(--text-color);
 }
-.tel::before {
-  content: "";
-  display: inline-block;
+.header-address-link:hover .envelope,
+.header-address-link:focus .envelope,
+.header-address-link:hover .smartphone,
+.header-address-link:focus .smartphone {
+  fill: var(--accent-color);
+}
+.smartphone {
   width: 10px;
   height: 16px;
   margin-right: 10px;
-  background-image: url("../images/svg/svg-for-header/smartphone.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  color: var(--text-color);
 }
 /* ======= END HEADER ======= */
 
@@ -212,8 +211,10 @@ img {
 .hero {
   padding: 200px 0px;
   text-align: center;
-  /* background - временно пока нет картинки на фон */
-  background: #2f303a;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/bg-for-hero/Img.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1600px 600px;
 }
 .hero-title {
   max-width: 696px;
@@ -232,6 +233,7 @@ img {
   height: 50px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  cursor: pointer;
   border: none;
 
   font-family: inherit;
@@ -266,20 +268,20 @@ img {
 }
 .features-list-item:nth-child(1)::before {
   background-image: url("../images/svg/svg-for-features/antenna.svg");
-  background-size: 65.32px 70px;
+  background-size: 70px 70px;
 }
 
 .features-list-item:nth-child(2)::before {
   background-image: url("../images/svg/svg-for-features/clock.svg");
-  background-size: 65.32px 70px;
+  background-size: 70px 70px;
 }
 .features-list-item:nth-child(3)::before {
   background-image: url("../images/svg/svg-for-features/diagram.svg");
-  background-size: 65.32px 70px;
+  background-size: 70px 70px;
 }
 .features-list-item:nth-child(4)::before {
   background-image: url("../images/svg/svg-for-features/astronaut.svg");
-  background-size: 65.32px 70px;
+  background-size: 70px 70px;
 }
 
 .features-title {
@@ -342,15 +344,23 @@ img {
   display: flex;
   justify-content: space-between;
 }
-.clients-item a {
+.clients-link {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 170px;
   height: 90px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
 }
-.img-clients:hover {
+.clients-item svg {
+  fill: #afb1b8;
+}
+
+.clients-link:hover {
+  border: 1px solid var(--accent-color);
+}
+.clients-link:hover svg {
   fill: var(--accent-color);
 }
 /* ======= END CLIENTS ======= */
@@ -385,11 +395,19 @@ img {
   width: 206px;
   height: 80px;
 }
-
+.footer-social-svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--hero-title-color);
+}
 .footer-social-container .social-link {
   background-color: rgba(255, 255, 255, 0.1);
-  fill: #ffffff;
 }
+
+.footer-social-container .social-link:hover {
+  background-color: var(--accent-color);
+}
+
 .join {
   display: inline-block;
   margin-bottom: 20px;
