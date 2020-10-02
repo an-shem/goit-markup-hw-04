@@ -79,6 +79,36 @@ img {
   display: flex;
   justify-content: space-between;
 }
+
+/* СПИСОК СОЦИАЛЬНЫХ ССЫЛОК */
+.social-list-link {
+  display: flex;
+  /* margin-top: 16px; */
+  justify-content: center;
+}
+.social-item:not(:last-child) {
+  margin-right: 10px;
+}
+.social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.social-item:nth-child(1) .social-link {
+  background-image: url("../images/svg/social-links/instagram.svg");
+}
+.social-item:nth-child(2) .social-link {
+  background-image: url("../images/svg/social-links/twitter.svg");
+}
+.social-item:nth-child(3) .social-link {
+  background-image: url("../images/svg/social-links/facebook.svg");
+}
+.social-item:nth-child(4) .social-link {
+  background-image: url("../images/svg/social-links/linkedin.svg");
+}
+
 /* ======= END COMMON ======= */
 
 /* ======= LOGO ======= */
@@ -156,6 +186,26 @@ img {
 .active-page {
   color: var(--accent-color);
 }
+.mailto::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+  background-image: url("../images/svg/svg-for-header/envelope.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.tel::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 16px;
+  margin-right: 10px;
+  background-image: url("../images/svg/svg-for-header/smartphone.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 /* ======= END HEADER ======= */
 
 /* ======= HERO ======= */
@@ -202,7 +252,34 @@ img {
 
 .features-list-item {
   width: 270px;
-  height: 100px;
+}
+
+.features-list-item::before {
+  content: "";
+  display: block;
+  height: 120px;
+  margin-bottom: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f5f4fa;
+  border-radius: 4px;
+}
+.features-list-item:nth-child(1)::before {
+  background-image: url("../images/svg/svg-for-features/antenna.svg");
+  background-size: 65.32px 70px;
+}
+
+.features-list-item:nth-child(2)::before {
+  background-image: url("../images/svg/svg-for-features/clock.svg");
+  background-size: 65.32px 70px;
+}
+.features-list-item:nth-child(3)::before {
+  background-image: url("../images/svg/svg-for-features/diagram.svg");
+  background-size: 65.32px 70px;
+}
+.features-list-item:nth-child(4)::before {
+  background-image: url("../images/svg/svg-for-features/astronaut.svg");
+  background-size: 65.32px 70px;
 }
 
 .features-title {
@@ -233,7 +310,7 @@ img {
 }
 .command-item {
   width: 270px;
-  height: 368px;
+  height: 428px;
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
@@ -250,17 +327,42 @@ img {
   letter-spacing: 0.03em;
 }
 .command-item-profession {
+  margin-bottom: 16px;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.188;
   letter-spacing: 0.03em;
   color: var(--text-color);
 }
+
 /* ======= END COMMAND ======= */
+
+/* ======= CLIENTS ======= */
+.clients-list {
+  display: flex;
+  justify-content: space-between;
+}
+.clients-item a {
+  display: flex;
+  justify-content: center;
+  width: 170px;
+  height: 90px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+.img-clients:hover {
+  fill: var(--accent-color);
+}
+/* ======= END CLIENTS ======= */
 
 /* ======= FOOTER ======= */
 .footer {
   padding: 60px 0px;
+  background: #2f303a;
+}
+
+.footer .container {
+  display: flex;
 }
 
 .address-list:not(:last-child) {
@@ -276,8 +378,27 @@ img {
 .map {
   color: var(--hero-title-color);
 }
-.footer {
-  background: #2f303a;
+.footer-address {
+  margin-right: 70px;
+}
+.footer-social-container {
+  width: 206px;
+  height: 80px;
+}
+
+.footer-social-container .social-link {
+  background-color: rgba(255, 255, 255, 0.1);
+  fill: #ffffff;
+}
+.join {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--hero-title-color);
 }
 /* ======= END FOOTER ======= */
 
