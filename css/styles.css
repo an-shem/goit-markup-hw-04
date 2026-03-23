@@ -139,12 +139,13 @@ img {
   display: flex;
   align-items: center;
   gap: 40px;
+  color: #2e2f42;
 }
-.activ-page {
+.menu-item.current {
   position: relative;
   color: #404bbf;
 }
-.activ-page::after {
+.menu-item.current::after {
   content: '';
   position: absolute;
   bottom: -1px;
@@ -158,11 +159,11 @@ img {
   display: inline-block;
   padding: 24px 0;
   font-weight: 500;
-  color: #2e2f42;
+  color: inherit;
   transition: var(--transition-effect);
   transition-property: color;
 }
-.activ-page .menu-link,
+.menu-item.current .menu-link,
 .menu-link:hover,
 .menu-link:focus,
 .contacts-list-link:hover,
